@@ -1,0 +1,35 @@
+public class HW6_3 {
+	public static void main(String args[]) {
+		StringManipulate sm = new StringManipulate();
+		String a = "abc";
+		String b = "def";
+		String c = "abc";
+		System.out.println(sm.con(a,b));
+		sm.toUp(a);
+		System.out.println(sm.sam(a,b));
+		System.out.println(sm.sam(a,c));
+	}
+}
+
+public class StringManipulate {
+	public static String con(String a, String b) {
+		String c = a+b;
+		return c;
+	}
+
+	public static void toUp(String a) {
+		for(int i=0; i<a.length(); i++) {
+			char c = (char)(a.charAt(i)-32);
+			System.out.print(c);
+		}
+		System.out.println();
+	}
+
+	public static boolean sam(String a, String b) {
+		if(a.length()!=b.length()) return false;
+		for(int i=0; i<a.length(); i++) {
+			if(a.charAt(i)!=b.charAt(i)) return false;
+		}
+		return true;
+	}
+}
