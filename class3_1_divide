@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class HW3_1 {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.printf("Enter an integer : ");
+		int a = sc.nextInt();
+		if(a >>> 31==1) a=-a;
+		int m = a >> 3;
+		int n = a-8*m;
+		System.out.printf("\"The quotient of the absolute value of the input value divided by 8 is %d with a remainder of %d.\"",m,n);
+	}
+}
