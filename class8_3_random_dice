@@ -1,0 +1,22 @@
+public class Player{
+	private String name;
+	private int score=0;
+
+	public Player(String name) {
+		this.name = name;
+	}
+
+	public int play() {
+		int now = (int)(Math.random()*6)+1;
+		score += now;
+		return now;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public String getName() {
+		return name;
+	}
+}
