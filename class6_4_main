@@ -1,0 +1,10 @@
+public class HW6_4 {
+	public static void main(String args[]) {
+		Search sr = new Search();
+		System.out.print("문장 : ");
+		String a = sr.input();
+		System.out.print("단어 : ");
+		String b = sr.input();
+		sr.find(a,b);
+	}
+}
