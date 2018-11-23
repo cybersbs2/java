@@ -1,0 +1,13 @@
+public class HW8_4 {
+	public static void main(String args[]) {
+		Car c = new Car();
+		c.goStraight(25);
+		c.turnLeft();
+		c.goStraight(30);
+		c.turnRight();
+		c.goStraight(15);
+		c.turnLeft();
+		c.goStraight(20);
+		c.getMileage();
+	}
+}
