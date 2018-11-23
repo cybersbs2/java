@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class HW2_3 {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.printf("키를 입력하시오(cm) : ");
+		double number = sc.nextDouble();
+		double inch = number/2.54;
+		double feet = inch/12;
+		
+		System.out.printf("%.0fcm는 %.2ffeet이고,\n%.0fcm는 %.2finch입니다.\n",number,feet,number,inch);
+	}
+}
