@@ -1,3 +1,5 @@
+//정수를 입력받고 변형하여 
+
 import java.util.*;
 
 public class HW_2 {
