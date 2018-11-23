@@ -1,0 +1,14 @@
+public class Car {
+	private int mileage=0;
+
+	public void goStraight(int a) {
+		System.out.println(a+"m 직진했습니다.");
+		mileage += a;
+	}
+
+	public void turnLeft() { System.out.print("좌회전 후 "); }
+
+	public void turnRight() { System.out.print("우회전 후 "); }
+
+	public void getMileage() { System.out.println("총 주행 거리는 "+mileage+"m 입니다."); }
+}
