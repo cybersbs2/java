@@ -1,0 +1,17 @@
+public class BankAccount{
+	private int money=0;
+	
+	public BankAccount() { }
+
+	public void deposit(int a) {
+		money += a;
+	}
+
+	public void withDraw(int a) {
+		money -= a;
+	}
+
+	public int getBalance() {
+		return money;
+	}
+}
