@@ -1,0 +1,15 @@
+public class HW9_4 {
+	public static void main(String args[]) {
+		BankAccount ba = new BankAccount();
+		try {
+		ba.getBalance();
+		ba.deposit(100);
+		ba.getBalance();
+		ba.withdraw(1000000);
+		ba.getBalance();
+		}
+		catch (NegativeBalanceException e) {
+			System.out.println("잔고가 없습니다.");
+		}
+	}
+}
