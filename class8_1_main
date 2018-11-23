@@ -1,0 +1,8 @@
+public class HW8_1 {
+	public static void main(String args[]) {
+		Student st1 = new Student();
+		Student st2 = new Student("sbs",25,4.3);
+
+		st2.studentInfo();
+	}
+}
