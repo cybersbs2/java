@@ -1,0 +1,18 @@
+public class BankAccount {
+	private int balance=100000;
+
+	public void deposit(int money) {
+		balance += money;
+	}
+
+	public void withdraw(int money) throws NegativeBalanceException {
+		balance -= money;
+		if(balance<0) {
+			throw new NegativeBalanceException();
+		}
+	}
+
+	public void getBalance() {
+		System.out.println("잔액 : "+balance);
+	}
+}
