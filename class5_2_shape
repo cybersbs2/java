@@ -1,0 +1,68 @@
+import java.util.Scanner;
+
+public class HW5_3 {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		while(true) {
+			System.out.printf("도형의 타입(피라미드, 사각형, 다이아몬드), 출력할 줄 수(피라미드일 경우 10이하의 수만 입력 가능, 다이아몬드일 경우 홀수만 입력 가능, 출력할 숫자는 양수만 가능) : ");
+			String input=sc.nextLine();
+			int a = input.indexOf(",");
+			String type = input.substring(0,a);
+			int c[] = new int[3];
+			int line=0;
+			if(type.equals("사각형")) {
+				String line_str_sq = input.substring(a+1);
+				String b[] = line_str_sq.split(",");
+				for(int i=0; i<3; i++) c[i]=Integer.parseInt(b[i]);;
+			}
+			else {
+				String line_str = input.substring(a+1);
+				line = Integer.parseInt(line_str);
+				if(line<0) continue;
+			}
+			if(type.equals("피라미드")) {
+				if(line>=10) {
+					System.out.println();
+					System.out.println("피라미드는 10이하의 양수만 입력할 수 있습니다.");
+					System.out.println();
+					continue;
+				}
+				for(int i=0; i<line; i++) {
+					for(int j=line-(i+1);j>0;j--) System.out.printf(" ");
+					for(int j=i; j>=0; j--) System.out.printf("%d",j);
+					for(int j=1; j<=i; j++) System.out.printf("%d",j);
+					System.out.printf("\n");
+				}
+				break;
+			}
+
+			if(type.equals("사각형")) {
+				for(int i=0; i<c[1]; i++) {
+					for(int j=0; j<c[2]; j++) {
+						for(int k=0; k<c[0]; k++) System.out.printf("*");
+						System.out.printf(" ");
+					}
+					System.out.println();
+				}
+				break;
+			}
+			
+			if(type.equals("다이아몬드")) {
+				if(line%2==0) continue;
+				for(int i=1;i<=line;) {
+					for(int j=(line-i)/2; j>=0 ;j--) System.out.printf(" ");
+					for(int j=i; j>0; j--) System.out.printf("*");
+					System.out.println();
+					i=i+2;
+				}
+				for(int i=line-2; i>=1;) {
+					for(int j=(line-i)/2; j>=0; j--) System.out.printf(" ");
+					for(int j=i; j>0; j--) System.out.printf("*");
+					System.out.println();
+					i=i-2;
+				}
+			break;
+			}
+		}
+	}
+}
