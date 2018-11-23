@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class HW2_2 {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		
+		int number = sc.nextInt();
+		
+		if(number>=1000000000) System.err.println("1억보다 큼");
+		else {
+		int man = number/100000;
+		if(man==1) System.out.printf("만 ");
+		else if(man!=0) System.out.printf("%d만 ",man);
+		number %= 10000;
+		int chun = number/1000;
+		if(chun==1) System.out.printf("천 ");
+		else if(chun!=0) System.out.printf("%d천 ",chun);
+		number %= 1000;
+		int back = number/100;
+		if(back==1) System.out.printf("백 ");
+		else if(back!=0) System.out.printf("%d백 ",back);
+		number %= 100;
+		int sib = number/10;
+		if(sib==1) System.out.printf("십 ");
+		else if(sib!=0) System.out.printf("%d십 ",sib);
+		number %= 10;
+		if(number==1) System.out.printf("일");
+		else if(number!=0) System.out.printf("%d",number);
+		System.out.println("입니다.");
+		}
+	}
+}
