@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class HW3_3 {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.printf("Enter a positive integer less than 100 : ");
+		int a = sc.nextInt();
+		
+		int ten = a/10;
+		int one = a-ten*10;
+		if(ten==3||ten==6||ten==9) System.out.printf("clap ");
+		if(one==3||one==6||one==9) System.out.printf("clap ");
+		
+	}
+}
