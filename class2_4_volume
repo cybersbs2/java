@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class HW2_4 {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.printf("밑면의 반지름을 입력하시오(cm) : ");
+		double r = sc.nextDouble();
+		System.out.printf("원기둥의 높이를 입력하시오(cm) : ");
+		double h = sc.nextDouble();
+
+		double v = Math.PI*r*r*h;
+
+		System.out.printf("밑면의 반지름이 %.1fcm이고, 높이가 %.2fcm인,\n 원기둥의 부피는 %.2f㎤",r,h,v);
+	}
+}
