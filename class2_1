@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class HW2_1 {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		
+		float x_1 = sc.nextFloat();
+		float y_1 = sc.nextFloat();
+		float x_2 = sc.nextFloat();
+		float y_2 = sc.nextFloat();
+
+		float length = Math.abs(x_1-x_2);
+		float width = Math.abs(y_1-y_2);
+
+		if(length==0||width==0) System.err.println("계산 불가능");
+		else System.out.printf("넓이 : %.1f\n길이 : %.1f\n",length*width, 2*(length+width));
+	}
+}
