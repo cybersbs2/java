@@ -1,0 +1,62 @@
+import java.util.*;
+
+public class HW7_3 {
+	public static void main(String args[]) {
+		String seat[][] = new String[10][10];
+		seat = randomSeat(seat);
+		Scanner sc = new Scanner(System.in);
+		while(true) {
+			showSeat(seat);	
+			System.out.println("예약을 진행하시겠습니까?(Y/N)");
+			String input = sc.nextLine();
+			input = input.toLowerCase();
+			if(input.equals("y")) reservationSeat(seat);
+			else if(input.equals("n")) break;
+			else System.out.println("다시 입력해주세요.");
+		}
+	}
+
+	public static String[][] randomSeat(String seat[][]) {
+		for(int i=0; i<10; i++) {
+			for(int j=0; j<10; j++) {
+				if((int)(Math.random()*3)%3==0) seat[i][j]="X";
+			}
+		}
+		return seat;
+	}
+
+	public static void showSeat(String seat[][]) {
+		System.out.println("현재 예약 상태");
+		System.out.println("  1 2 3 4 5 6 7 8 9 10");
+		for(int i=0; i<10; i++) {
+			System.out.print((char)('a'+i)+" ");
+			for(int j=0; j<10; j++) {
+				if(seat[i][j]!=null) System.out.print(seat[i][j]+" ");
+				else System.out.print("O ");
+			}
+			System.out.println();
+		}
+	}
+
+	public static String[][] reservationSeat(String seat[][]) {
+		Scanner sc = new Scanner(System.in);
+		while(true){
+			System.out.print("좌석의 행 : ");
+			String row_a = sc.next();
+			int row = row_a.compareTo("a");
+			System.out.print("좌석의 열 : ");
+			int column = sc.nextInt()-1;
+			if(row>9||column>9) {
+				System.out.println("존재하지 않는 좌석입니다.");
+				break;
+			}
+			if(seat[row][column]!=null) System.out.println("이미 예약된 좌석입니다. 다시 선택하세요.");
+			else {
+				seat[row][column] = "X";
+				System.out.println("성공적으로 예약되었습니다.");
+				break;
+			}
+		}
+		return seat;
+	}
+}
