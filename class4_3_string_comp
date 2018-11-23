@@ -1,0 +1,16 @@
+//
+
+import java.util.Scanner;
+public class test4 {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("문자열을 입력하세요 : ");
+
+		String c="abcd";
+		String b = sc.nextLine();
+		
+		if(b.compareTo(c)==0) System.out.println("동일한 문자열입니다.");
+		else System.out.println("다른 문자열입니다.");
+		
+	}
+}
