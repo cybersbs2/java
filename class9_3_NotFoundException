@@ -1,0 +1,29 @@
+import java.util.*;
+
+public class HW9_3 {
+	public static void main(String args[]) {
+		int a[] = new int[] {1,2,3,4,5};
+		Scanner sc = new Scanner(System.in);
+		System.out.println("{1,2,3,4,5} 중 찾고 싶은 숫자를 입력하세요.");
+		int b = sc.nextInt();
+		try {
+			if(searchArray(a,b)==true) {
+				System.out.println("찾았습니다.");
+			}
+		}
+		catch (NotFoundException e) {
+			System.out.println("없는 숫자 입니다.");
+		}
+	}
+
+	public static boolean searchArray(int a[], int b) throws NotFoundException {
+		boolean f = false;
+		for(int i=0; i<a.length; i++) {
+			if(a[i]==b) f=true;
+		}
+		if(f==false) {
+			throw new NotFoundException();
+		}
+		return f;
+	}
+}
