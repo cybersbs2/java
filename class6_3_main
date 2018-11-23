@@ -1,0 +1,12 @@
+public class HW6_3 {
+	public static void main(String args[]) {
+		StringManipulate sm = new StringManipulate();
+		String a = "abc";
+		String b = "def";
+		String c = "abc";
+		System.out.println(sm.con(a,b));
+		sm.toUp(a);
+		System.out.println(sm.sam(a,b));
+		System.out.println(sm.sam(a,c));
+	}
+}
