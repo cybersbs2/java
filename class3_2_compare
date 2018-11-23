@@ -1,0 +1,80 @@
+import java.util.Scanner;
+
+public class HW3_2 {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.printf("Enter four integer : ");
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c = sc.nextInt();
+		int d = sc.nextInt();
+		int cnt=0;
+		int max=0, max_1=0, min_1=0;
+		int min=0, max_2=0, min_2=0;
+		
+		if(a>b) {
+			max_1=a;
+			min_1=b;
+		}
+		else if(a==b) {
+			max_1=a;
+			min_1=b;
+			cnt++;	
+		}
+		else {
+			max_1=b;
+			min_1=a;
+		} 
+
+		if(c>d) {
+			max_2=c;
+			min_2=d;
+		}
+		else if(c==d) {
+			max_2=c;
+			min_2=d;
+			cnt++;	
+		}
+		else {
+			max_2=d;
+			min_2=c;
+		}
+	
+		if(max_1>max_2) max=max_1;
+		else if(max_1==max_2) {
+			max=max_1;
+			cnt++;	
+		}
+		else max=max_2;
+		
+		if(min_1>min_2) min=min_2;
+		else if(min_1==min_2) {
+			min=min_2;
+			cnt++;
+		}
+		else min=min_1;
+
+		if(min_1==max_2) cnt++;
+		if(max_1==min_2) cnt++;
+		
+		switch(cnt){
+			case 0 :
+				System.out.printf("The zero integers are same.\n");
+				break;
+			case 1 :
+				System.out.printf("The two integers are same.\n");
+				break;
+			case 2 :
+				System.out.printf("The four(two,two) integers are same.\n");
+				break;
+			case 3 :
+				System.out.printf("The three integers are same.\n");
+				break;
+			case 6 :
+				System.out.printf("The four integers are same.\n");
+				break;
+		}	
+		if(max!=min) System.out.printf("max : %d  min : %d\n",max,min);
+	}
+}
